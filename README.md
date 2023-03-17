@@ -1,3 +1,34 @@
+# Resistora
+
+Resistora is a React project that helps solve the problem of reading resistor values from color bands. This project was created to make the workflow of my colleagues and I more efficient while working in the lab.
+
+## Colorband Calculator
+
+"Calculate resistor values quickly and accurately with Resistora's Colorband Calculator! in seconds, not minutes!".
+
+## Problem
+
+When working with resistors in the lab, it can be time-consuming to read the resistor value from the color bands. This process can be especially frustrating when working with many resistors at once. Resistora was created to alleviate this issue and make the workflow in the lab more efficient.
+
+## Solution
+
+Resistora's Colorband Calculator allows users to input the color bands of a resistor and quickly get the corresponding resistance value. The calculator also provides additional information such as tolerance and temperature coefficient.
+
+## Usage
+
+To use Resistora's Colorband Calculator, simply input the color bands of your resistor into the appropriate fields and click the "Calculate" button. The calculated resistance value, tolerance, and temperature coefficient will be displayed below.
+
+## Acknowledgments
+
+Resistora was created to solve a problem that my colleagues and I faced while working in the lab. I would like to acknowledge their input and feedback throughout the development process.
+
+## Contribution
+Contributions are always welcome. If you find any bugs or have suggestions for improvements, please open an issue or a pull request on the [GitHub repository](https://github.com/aimalexe/resistora)
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -13,11 +44,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 

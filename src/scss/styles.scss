@@ -1,0 +1,27 @@
+// Changing default colors.
+$primary: #37b0bd;
+$secondary: #e26584;
+
+// 1. Including functions first (so I can manipulate colors, SVGs, calc, etc)
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+
+
+//Defining custom colors.
+$custom-theme-colors : (
+    "white1": #f1f7f8,
+    "white2": #f1f6f9,
+    "teal1": #37b0bd,
+    "teal2": #36b2b8,
+    "teal3": #75a9b9,
+    "pink1": #e26584,
+    "pink2": #f19db2,
+    "pink3": #b3a3b5,
+);
+
+// Merging the custom color maps
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+//Importing all bootstrap.
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
