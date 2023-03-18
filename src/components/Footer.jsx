@@ -26,8 +26,9 @@ export default function Footer() {
             </div>
 
             <div className="text-center text-white p-3 bg bg-teal1">
-                © 2023 Copyright:
+                Made with love by: &nbsp; 
                 <a className="text-white" href="https://github.com/aimalexe/"> Aimal Khan</a>
+                &nbsp;© 2023 
             </div>
 
         </footer>
