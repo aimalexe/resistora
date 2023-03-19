@@ -10,7 +10,6 @@ $secondary: #e26584;
 
 //Defining custom colors.
 $custom-theme-colors : (
-    "white1": #f1f7f8,
     "white2": #f1f6f9,
     "teal1": #37b0bd,
     "teal2": #36b2b8,
@@ -20,18 +19,18 @@ $custom-theme-colors : (
     "pink3": #b3a3b5,
 
     //Resistors colors:
-    "Black": #000000,
-    "Brown": #984806,
+    "black": #000000,
+    "brown": #984806,
     "red": #fc0b0b,
-    "Orange": #fa730c,
-    "Yellow": #ffff00,
-    "Green": #0dfb0d,
-    "Blue": #3690ff,
-    "Violet": #8a37ca,
-    "Grey": #7c7a7a,
-    "White": #f1f7f8,
-    "Gold": #e4b711,
-    "Silver": #c5bd95,
+    "orange": #fa730c,
+    "yellow": #ffff00,
+    "green": #0dfb0d,
+    "blue": #3690ff,
+    "violet": #8a37ca,
+    "gray": #7c7a7a,
+    "white": #f1f7f8,
+    "gold": #e4b711,
+    "silver": #c5bd95,
 );
 
 // Merging the custom color maps

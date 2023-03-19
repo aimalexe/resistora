@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-export default function ResistorAnimation() {
+export default function ResistorAnimation(props) {
     useEffect(() => {
         const container = document.getElementById("resistorDesignContainer");
 
@@ -46,7 +46,6 @@ export default function ResistorAnimation() {
         // Creating the terminals
         const material = new THREE.LineBasicMaterial({ color: 0xe26584 });
         const point = [];
-        point.push(new THREE.Vector3(0, 0, 0));
         point.push(new THREE.Vector3(0, 30, 0));
         point.push(new THREE.Vector3(0, -30, 0));
         const geometry = new THREE.BufferGeometry().setFromPoints(point);
@@ -66,10 +65,10 @@ export default function ResistorAnimation() {
             band.position.setY(x);
             resistor.add(band);
         }
-        createColorBands(10, 0xfc0b0b);
-        createColorBands(7, 0xffff00);
-        createColorBands(4, 0x8a37ca);
-        createColorBands(-10, 0xe4b711);
+        createColorBands(10, props.firstDigitColor);
+        createColorBands(7, props.secondDigitColor);
+        createColorBands(4, props.multiplierColor);
+        createColorBands(-10, props.toleranceColor);
 
         //Adding Lights
         //point light (color, intensity, distance, decay)
@@ -81,11 +80,11 @@ export default function ResistorAnimation() {
             // scene.add(lightHelper);
 
         //AmbientLight(color, intensity)
-        const ambientLight = new THREE.AmbientLight(0x404040, 2);
+        const ambientLight = new THREE.AmbientLight(0x404040, 3);
         scene.add(ambientLight);
 
         function animate() {
-            resistor.rotateX(0.003);
+            resistor.rotateX(0.009);
             resistor.rotateY(-0.003);
             resistor.rotateZ(0.005);
 
@@ -102,7 +101,7 @@ export default function ResistorAnimation() {
             renderer.setSize(container.clientWidth, container.clientHeight);
         });
 
-    }, []);
+    }, [props]);
 
     return (
         <div
