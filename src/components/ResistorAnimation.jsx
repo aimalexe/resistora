@@ -52,27 +52,49 @@ export default function ResistorAnimation(props) {
         const terminals = new THREE.Line(geometry, material);
         resistor.add(terminals);
 
+        // Creating mounds on both end of resistor
+        const moundFirst = new THREE.Mesh( 
+            new THREE.TorusGeometry( 7, 2.5, 7, 100 ), 
+            new THREE.MeshBasicMaterial({ 
+                color: 0x36b2b8,
+                wireframe: false,
+            })
+        );
+        resistor.add( moundFirst );
+        moundFirst.rotateX(Math.PI / 2);
+        moundFirst.position.setY(11)
+
+        const moundLast = new THREE.Mesh( 
+            new THREE.TorusGeometry( 7, 2.5, 7, 100 ), 
+            new THREE.MeshBasicMaterial({ 
+                color: 0x36b2b8,
+                wireframe: false,
+            })
+        );
+        resistor.add( moundLast );
+        moundLast.rotateX(Math.PI / 2);
+        moundLast.position.setY(-11)
+
         // Creating Bands of color
-        function createColorBands(x, color) {
-            const band = new THREE.Mesh(
-                new THREE.RingGeometry(7.9, 9, 30, 30, 6.28, 6.28),
-                new THREE.MeshStandardMaterial({
-                    color: color,
-                    side: THREE.DoubleSide,
+        function createColorBands(x, radius,color) {
+            const band = new THREE.Mesh( 
+                new THREE.CylinderGeometry( radius, radius, 1.5, 64, 64, true ), 
+                new THREE.MeshBasicMaterial({
+                    color: color
                 })
             );
-            band.rotateX(Math.PI / 2);
+            scene.add( band );
             band.position.setY(x);
             resistor.add(band);
         }
-        createColorBands(10, props.firstDigitColor);
-        createColorBands(7, props.secondDigitColor);
-        createColorBands(4, props.multiplierColor);
-        createColorBands(-10, props.toleranceColor);
+        createColorBands(11, 9.55, props.firstDigitColor);
+        createColorBands(7, 8.1, props.secondDigitColor);
+        createColorBands(4, 8.1, props.multiplierColor);
+        createColorBands(-11, 9.55, props.toleranceColor);
 
         //Adding Lights
         //point light (color, intensity, distance, decay)
-        const pointLight = new THREE.PointLight(0xf19db2, 4, 50, 1.5);
+        const pointLight = new THREE.PointLight(0x404040, 4, 50, 1.5);
         scene.add(pointLight);
         pointLight.position.set(-5, 1, 40);
 
@@ -110,7 +132,7 @@ export default function ResistorAnimation(props) {
             data-bs-ride="carousel"
         >
             <div className="carousel-inner col-md-12">
-                <canvas id="resistorDesign" className="d-block w-75 mx-auto" />
+                <canvas id="resistorDesign" className="d-block w-75 mx-auto border-bottom border-primary" />
             </div>
         </div>
     );
